@@ -55,10 +55,14 @@ class NexmoMessage {
 	// A few options
 	public $ssl_verify = false; // Verify Nexmo SSL before sending any message
 
-
-	function NexmoMessage ($api_key, $api_secret) {
+	public function __construct($api_key, $api_secret) {
+    	{
 		$this->nx_key = $api_key;
 		$this->nx_secret = $api_secret;
+	}
+
+	function NexmoMessage ($api_key, $api_secret) {
+		self::__construct($api_key, $api_secret);
 	}
 
 
